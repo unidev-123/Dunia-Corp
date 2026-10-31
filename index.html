@@ -82,5 +82,20 @@
         <p>&copy; 2026 UniDev. All rights reserved.</p>
     </footer>
 
+    
+<!-- Cursor Glow -->
+    <div class= "cursor-glow"></div>
+
+    <script>
+        const cursorGlow = document.querySelector('.cursor-glow');
+
+        window.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+
+            cursorGlow.style.left = '${x}px'
+            cursorGlow.style.top = '${y}px';
+        });
+    
 </body>
 </html>
