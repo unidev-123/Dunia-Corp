@@ -182,10 +182,3 @@ footer {
     z-index: 9999;
 }
 
-/* Optional: Make the glow slightly more pronounced when hovering over cards */
-body:has(.skill-card:hover) .cursor-glow,
-body:has(.project-card:hover) .cursor-glow {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.07) 0%, rgba(255, 255, 255, 0) 70%);
-}
