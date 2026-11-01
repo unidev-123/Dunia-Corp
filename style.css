@@ -11,6 +11,11 @@ body {
     color: #111111;
     line-height: 1.6;
     padding: 0 20px;
+    cursor: none;
+}
+
+a, button {
+    cursor: none;
 }
 
 /* --- Navigation --- */
@@ -172,13 +177,17 @@ footer {
 /* --- Cursor Glow Effect --- */
 .cursor-glow {
     position: fixed;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.04) 0%, rgba(255, 255, 255, 0) 70%);
+    left: 0;
+    top: 0;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
+    background: radial-gradient(circle, rgba(17, 17, 17, 0.18) 0%, rgba(17, 17, 17, 0.09) 18%, rgba(17, 17, 17, 0.04) 35%, rgba(17, 17, 17, 0) 70%);
     pointer-events: none;
     transform: translate(-50%, -50%);
-    transition: width 0.3s ease, height 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.18s ease;
     z-index: 9999;
+    filter: blur(12px);
+    mix-blend-mode: multiply;
 }
-
