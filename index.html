@@ -62,15 +62,16 @@
             <div class="project-card">
                 <h3>Coming Soon.</h3>
                 <p>Our Team Is Hard At Work To Bring Amazing Work To The Tabel.</p>
-                <div class="tags">
+                <div class="tags"></div>
             </div>
 
             <div class="project-card">
                 <h3>Coming Soon...</h3>
                 <p>Great Projects Are In The Works.</p>
-                <div class="tags">
+                <div class="tags"></div>
             </div>
-        </section>
+        </div>
+    </section>
     
     <!-- Contact Section -->
     <section id="contact" class="section contact">
@@ -83,20 +84,27 @@
         <p>&copy; 2026 UniDev. All rights reserved.</p>
     </footer>
 
-    
-<!-- Cursor Glow -->
-    <div class= "cursor-glow"></div>
+    <!-- Cursor Glow -->
+    <div class="cursor-glow"></div>
 
     <script>
         const cursorGlow = document.querySelector('.cursor-glow');
 
-        window.addEventListener('mousemove', (e) => {
-            const x = e.clientX;
-            const y = e.clientY;
+        if (cursorGlow) {
+            const moveGlow = (event) => {
+                const x = event.clientX;
+                const y = event.clientY;
 
-            cursorGlow.style.left = '${x}px'
-            cursorGlow.style.top = '${y}px';
-        });
+                cursorGlow.style.left = `${x}px`;
+                cursorGlow.style.top = `${y}px`;
+                cursorGlow.style.opacity = '1';
+            };
+
+            window.addEventListener('pointermove', moveGlow);
+            window.addEventListener('pointerleave', () => {
+                cursorGlow.style.opacity = '0';
+            });
+        }
     </script>
 </body>
 </html>
