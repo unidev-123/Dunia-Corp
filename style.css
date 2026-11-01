@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #fcfcfc;
+    background-color: #f7f5f2;
     color: #111111;
     line-height: 1.6;
     padding: 0 20px;
@@ -82,11 +82,12 @@ nav a:hover {
     border-radius: 6px;
     font-weight: 500;
     font-size: 0.95rem;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .btn-primary:hover {
     background-color: #333333;
+    transform: translateY(-1px);
 }
 
 /* --- General Sections --- */
@@ -114,12 +115,13 @@ nav a:hover {
     border: 1px solid #e5e5e5;
     padding: 30px;
     border-radius: 8px;
-    transition: border-color 0.2s ease, transform 0.2s ease;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .skill-card:hover, .project-card:hover {
     border-color: #aaaaaa;
     transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(17, 17, 17, 0.04);
 }
 
 .skill-card h3, .project-card h3 {
@@ -182,12 +184,30 @@ footer {
     width: 260px;
     height: 260px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(17, 17, 17, 0.18) 0%, rgba(17, 17, 17, 0.09) 18%, rgba(17, 17, 17, 0.04) 35%, rgba(17, 17, 17, 0) 70%);
+    background: radial-gradient(
+        circle,
+        rgba(17, 17, 17, 0.18) 0%,
+        rgba(17, 17, 17, 0.10) 18%,
+        rgba(165, 145, 118, 0.08) 34%,
+        rgba(17, 17, 17, 0.02) 50%,
+        rgba(17, 17, 17, 0) 72%
+    );
     pointer-events: none;
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 0.18s ease;
     z-index: 9999;
-    filter: blur(12px);
+    filter: blur(14px);
+    box-shadow: 0 0 80px rgba(17, 17, 17, 0.08);
     mix-blend-mode: multiply;
+}
+
+@media (pointer: coarse) {
+    body, a, button {
+        cursor: auto;
+    }
+
+    .cursor-glow {
+        display: none;
+    }
 }
